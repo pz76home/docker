@@ -1,4 +1,5 @@
 #Interactive
+
 docker exec -it <container_name> /bin/bash
 
 apt-get update &&  apt-get install -y zlib1g-dev
