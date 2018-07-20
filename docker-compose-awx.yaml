@@ -71,7 +71,7 @@ services:
     image: postgres:9.6
     restart: unless-stopped
     volumes:
-       - /tmp/pgdocker:/var/lib/postgresql/data:Z
+       - /export/awx/pgdocker:/var/lib/postgresql/data:Z
     environment:
       POSTGRES_USER: awx
       POSTGRES_PASSWORD: awxpass
