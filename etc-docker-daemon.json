@@ -1,0 +1,7 @@
+#Change default bridge network, restart docker service.
+
+{
+ "bip": "192.168.1.5/25",
+  "fixed-cidr": "192.168.1.0/25",
+  "mtu": 1500
+}
