@@ -31,7 +31,7 @@ services:
       - graylog_journal:/usr/share/graylog/data/journal
       - graylog_data:/usr/share/graylog/data
     environment:
-      - GRAYLOG_PASSWORD_SECRET=adminpasswordpb@#
+      - GRAYLOG_PASSWORD_SECRET=adminpassword@#
       - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
       - GRAYLOG_WEB_ENDPOINT_URI=http://192.168.1.20:9001/api
     links:
