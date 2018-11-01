@@ -1,0 +1,17 @@
+#Read wiki for more details
+version: '3.3'
+
+services:
+   seafile:
+     image: seafileltd/seafile:latest
+     volumes:
+        - /data/seafile:/shared
+        - /etc/letsencrypt:/etc/letsencrypt
+        - /data/seafile/templates:/templates
+     restart: 'always'
+     ports:
+       - "443:443"
+     environment:
+       SEAFILE_SERVER_HOSTNAME: www.website.com
+       SEAFILE_ADMIN_EMAIL: admin@website.com
+       SEAFILE_ADMIN_PASSWORD: Password
