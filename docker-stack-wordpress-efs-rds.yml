@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+   wordpress:
+     image: wordpress:latest
+     deploy:
+       replicas: 2
+       restart_policy:
+        condition: on-failure
+     volumes:
+       - /efs/wordpress/www:/var/www/html
+     ports:
+       - "80:80"
+     environment:
+       WORDPRESS_DB_HOST: appname.abcdef12345.ap-southeast-2.rds.amazonaws.com:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: password
+     networks:
+       - wordpress
+
+networks:
+  wordpress:
+    external:
+      name: wordpress
