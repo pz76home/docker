@@ -1,0 +1,44 @@
+---
+  defaultImage: true
+  image: 
+    repository: "bitnami/wordpress"
+    tag: "latest"
+  mariadb: 
+    image: 
+      repository: "bitnami/mariadb"
+      tag: "10.1.35-debian-9"
+    enabled: true
+    db: 
+      name: "wordpress"
+      user: "someuser"
+      password: "somepassword"
+    rootUser: 
+      password: "somepassword"
+    master: 
+      persistence: 
+        enabled: true
+        size: "5Gi"
+        storageClass: ""
+  wordpressUsername: "admin"
+  wordpressPassword: "somepassword"
+  wordpressEmail: "myemail@home.com"
+  externalDatabase: 
+    host: ""
+    user: ""
+    password: ""
+    database: ""
+    port: "3306"
+  persistence: 
+    enabled: true
+    size: "7Gi"
+    storageClass: ""
+    existingClaim: "wordpress"
+  ingress: 
+    enabled: true
+    hosts: 
+      - 
+        name: "wordpress"
+  serviceType: "NodePort"
+  nodePorts: 
+    http: ""
+    https: ""
